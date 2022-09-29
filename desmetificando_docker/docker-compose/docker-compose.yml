@@ -1,0 +1,25 @@
+version : '3.8'
+services:
+  mysqlsrv:
+    image: mysql
+    container_name: mysql_server
+    environment:
+      - MYSQL_ROOT_PASSWORD: 'Senha123'
+      - MYSQL_DATABASE: 'padrao'
+
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    networks:
+      - minha-rede
+  
+  adminer_front:
+    image: adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - minha-rede
+networks:
+  minha-rede:
+    - driver: brigde
