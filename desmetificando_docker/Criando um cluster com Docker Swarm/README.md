@@ -1,0 +1,5 @@
+## o que é um docker swarm?
+Orquestrador de contâiners do docker, que provê recursos de clustering nativo de hosts do Docker e agendamento de cargas de trabalho de contâiners
+
+## Nós gerenciadores e nós de trtabalho
+Um swarm é composto por dois tipos de hosts de contêiner: nós gerenciadores e nós de trabalho. Todos os comandos CLI do Docker para controlar e monitorar um swarm devem ser executados em um de seus nós gerenciadores. Os nós gerenciadores podem ser considerados os "zeladores" do estado Swarm — juntos, eles formam um grupo de consenso que mantém o reconhecimento do estado dos serviços em execução no swarm, e o trabalho deles é garantir que o estado real do swarm seja sempre condizente com o estado desejado, conforme definido pelo desenvolvedor ou administrador. Para ingressar em um swarm, um nó de trabalho deve usar um "token de associação" gerado pelo nó gerenciador quando o swarm foi inicializado.
